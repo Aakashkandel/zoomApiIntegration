@@ -16,13 +16,13 @@ const fetchingdata=async(userData)=>{
 
 }
 
-function* Working(action) {
+function* Working(action) {  
     console.log("this is fetching data",action.payload);
     const {navigate}=action.payload;
     try{
         yield put(onLoad());
         const response=yield call(fetchingdata,action.payload)
-        localStorage.setItem("token",response.token)
+        localStorage.setItem('token',response.token )
         console.log(response.token)
         yield put(onFetchSuccess(response))
         setTimeout(() => {

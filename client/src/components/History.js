@@ -3,20 +3,35 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getcomplainFetch, resetComplainData } from '../features/reducers/HistorySlice';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import '../components/assets/css/loader.css'
 
 export default function History() {
     const dispatch = useDispatch();
     
 
     useEffect(() => {
-        dispatch(resetComplainData());
-        dispatch(getcomplainFetch());
-    }, [dispatch]);
+       dispatch(getcomplainFetch())
+      
+    },[dispatch] ); 
 
-    const complain = useSelector((state) => state.complain.complains);
+    const complainData = useSelector((state) => state.complain);
+    const complain=complainData.complains;
+    const isloading=complainData.isloading;
 
-
-    console.log(complain);
+    if(isloading)
+    {
+        return(
+            <>
+            <div class="h-screen flex justify-center items-center w-full">
+            <div class="loader"></div>
+            </div>
+            </>
+        )
+    }
+    
+    
+   
+  
 
     return (
         <div>

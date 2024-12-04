@@ -8,7 +8,9 @@ export const complainslice=createSlice({
     },
     reducers:{
         getcomplainFetch:(state)=>{
+            
             state.isloading=true;
+        
         },
         getcomplainSuccess:(state,action)=>{
             state.complains=action.payload;
@@ -22,6 +24,7 @@ export const complainslice=createSlice({
             state.isloading=false;
             state.error=null
             state.complains=[]
+            
         }
     }
 });

@@ -4,15 +4,19 @@ import { toast } from 'react-toastify';
 import axios from '../../api/index';
 
 const fetchingData = async (complainData) => {
+  const token=localStorage.getItem("token")
   try {
     const response = await axios.post('/complainregister', complainData, {
-      headers: { 'Content-Type': 'multipart/form-data' },
+      headers: { 'Content-Type': 'multipart/form-data',
+        'token':token
+       },
     });
     return response.data;
   } catch (error) {
     throw new Error(error?.response?.data?.message || "Unable to register complain");
   }
 };
+
 
 function* Working(action) {
   const { complainData, navigate } = action.payload;
