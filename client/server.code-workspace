@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"name": "server",
+			"path": "../server"
+		},
+		{
+			"name": "complainproject-MERN-",
+			"path": "../../final complain register/complainproject-MERN-"
+		},
+		{
+			"name": "client",
+			"path": "."
+		}
+	],
+	"settings": {}
+}

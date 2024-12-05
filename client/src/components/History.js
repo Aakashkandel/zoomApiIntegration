@@ -32,7 +32,7 @@ export default function History() {
     
    
   
-
+    
     return (
         <div>
             <div class="text-2xl font-bold text-gray-700 text-center">List of Complain </div>
