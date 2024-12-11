@@ -17,8 +17,10 @@ export default function Complain() {
 
 
   const submithandler = async (e) => {
+
     e.preventDefault(); 
     const { type, uploadfile, message, advice } = formData;
+    console.log(uploadfile);
 
     const formDataToSubmit = new FormData();
     formDataToSubmit.append('type', type);
@@ -46,7 +48,7 @@ export default function Complain() {
     if (type === 'file') {
       setFormData({
         ...formData,
-        [name]: files[0],  
+        [name]: files,  
       });
     } else {
       setFormData({
